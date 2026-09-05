@@ -7,8 +7,7 @@ This repository contains an example of my workflow for producing YouTube video s
 3. My **script prompt** identifies the content of a script, and is used in conjunction with the **template prompt**.
 4. My **shooting scripts** — the end product, which my AI agent generates using the videos template as the style guide and the script prompt that provides content, context, and direction.
 
-I write my prompts in Markdown (`.md`), my templates and scripts in AsciiDoc (`.ad`), and my script-writing structure on the [StudioBinder "Script Writing on YouTube"](https://www.studiobinder.com/blog/script-writing-on-youtube/)
-article.
+I write my prompts in Markdown (`.md`), my templates and scripts in AsciiDoc (`.ad`), and I based my script-writing structure on the [StudioBinder "Script Writing on YouTube"](https://www.studiobinder.com/blog/script-writing-on-youtube/) article.
 
 ## Repository Contents
 
