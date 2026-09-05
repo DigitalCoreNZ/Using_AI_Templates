@@ -2,34 +2,33 @@
 
 This repository contains an example of my workflow for producing YouTube video scripts with AI. It shows you what I build and how I build it, in three stages:
 
-1. My **original prompt**, which specifies what I want and how I want it built.
-2. My **template** — the structured style guide that accompanies my AI prompt. It carries the (pending) placeholders, my custom production metadata, and my immutables, and an AI agent processes all of it.
-3. My **filming scripts** — the end product, which my AI agent generates using my template as its style guide.
+1. My **template prompt**, which specifies how I want the template to be built.
+2. My **videos template** — the structured style guide that accompanies my script prompt. It carries the (pending) placeholders, my custom production metadata, and my immutables, and an AI agent processes all of it.
+3. My **script prompt**, which identifies the script content, and is used in conjunction with the **template prompt**.
+4. My **shooting scripts** — the end product, which my AI agent generates using the videos template as the style guide and the script prompt providing the content and direction.
 
-I write all of my documents in AsciiDoc (`.ad`), and I ground my style in the
-[StudioBinder "Script Writing on YouTube"](https://www.studiobinder.com/blog/script-writing-on-youtube/)
+I write my prompts in Markdown (`.md`), my templates and scripts in AsciiDoc (`.ad`), and my script-writing structure on the [StudioBinder "Script Writing on YouTube"](https://www.studiobinder.com/blog/script-writing-on-youtube/)
 article.
 
 ## Repository Contents
 
 | File | Description |
 | ---- | ----------- |
-| [Original_Prompt.md](Original_Prompt.md) | My original prompts that drive each step of this workflow |
-| [Videos_Template.ad](Videos_Template.ad) | My DigitalCoreNZ YouTube video script template (`Template_Videos_v0.5.1`), a reusable style guide with (pending) placeholders and production metadata |
-| [Recovery_Script_v0.5.1.ad](Recovery_Script_v0.5.1.ad) | "CloneZilla Recovery v0.5.1" — my filming script for creating a disk image and restoring a system from it |
-| [Recovery_Script_v0.5.2.ad](Recovery_Script_v0.5.2.ad) | "CloneZilla Recovery v0.5.2" — my rewrite of that script, framed around keeping my system and my data separate so my recovery can be deliberately destructive |
+| [Template_Prompt.md](Template_Prompt.md) | The prompt that results in the [Videos_Template.ad](Videos_Template.ad) |
+| [Videos_Template.ad](Videos_Template.ad) | The template that is used with the [Script_Prompt.md](Script_Prompt.md) |
+| [Script_Prompt.md](Script_Prompt.md) | The prompt that results in the Recovery Scripts |
+| [Recovery_Script_v0.5.1.ad](Recovery_Script_v0.5.1.ad) | "CloneZilla Recovery v0.5.1" — my shooting script for creating a disk image and restoring a system |
+| [Recovery_Script_v0.5.2.ad](Recovery_Script_v0.5.2.ad) | "CloneZilla Recovery v0.5.2" — my rewrite of the original script, framed around keeping my system and my data separate so my recovery can be deliberately destructive |
 
 ## How My Workflow Fits Together
 
 ```
-Original_Prompt.md  →  Videos_Template.ad  →  Recovery_Script_v0.5.1.ad  →  Recovery_Script_v0.5.2.ad
-     (my instructions)    (my style guide)       (my first script)         (my rewrite, aligned
-                                                                                   to my actual setup)
+Template_Prompt.md  →  Videos_Template.ad  →  Script_Prompt.md  →  Recovery_Script_v0.5.1.ad  →  Recovery_Script_v0.5.2.ad
 ```
 
-### 1. My Original Prompt
+### 1. My Template Prompt
 
-[Original_Prompt.md](Original_Prompt.md) holds the three conversational prompts that sit behind this
+[Template_Prompt.md](Template_Prompt.md) holds the three conversational prompts that sit behind this
 work. The key requirements I set out, in summary:
 
 - **I do not constrain word count** — my template guides the creation process, it does not limit it.
@@ -42,9 +41,11 @@ work. The key requirements I set out, in summary:
 
 In the example prompt, I ask for a two-part CloneZilla Live script (part 1: how I create an image; part 2: how I use that image to restore a system, with disclaimers on the destructive nature of a restore, written in the first person and the present tense), and I follow up with my rewrite brief for the v0.5.2 version.
 
-### 2. My Template
+### 2. My Videos Template
 
-[Videos_Template.ad](Videos_Template.ad) is the reusable style guide. Highlights:
+[Videos_Template.ad](Videos_Template.ad) is the reusable style guide.
+
+**Highlights:**
 
 - **My front-matter metadata** — my document details, plus a "Video Production Metadata" block (`videoType`, `coreTopic`, `sourceMaterial`, `corePromise`, `framework`, `targetRuntime`, `voiceOverStyle`, `structure`, and so on) that I keep deliberately *out* of the body.
 - **My scope for the Cold Open and the Review** — machine-readable definitions of what each of my sections must achieve.
@@ -52,7 +53,11 @@ In the example prompt, I ask for a two-part CloneZilla Live script (part 1: how 
 - **My scene anatomy** — my "Scene Number: Scene Title" heading convention and my four-column AV table (Shot, Visuals, Dialogue, Duration), including a reusable scene section that I repeat as many times as my topic needs.
 - **My fixed structure:** Cold open → Title sequence → Scenes → Review.
 
-### 3. My Recovery Scripts
+### 3. My Script Prompt
+
+[Script_Prompt.md](Script_Prompt.md) is the prompt that, when used with the [Videos_Template.ad](Videos_Template.ad) style guide, results in the My Recovery Scripts.
+
+### 4. My Recovery Scripts
 
 I film my shooting script from my own perspective (first person, present tense), and I base it on the [CloneZilla Live documentation](https://clonezilla.org/clonezilla-live-doc.php).
 
