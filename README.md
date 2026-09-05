@@ -1,4 +1,4 @@
-# Using AI Templates
+# README: Using AI Templates
 
 This repository contains an example of my workflow for producing YouTube video scripts with AI. It shows you what I built and how I built it, in four stages:
 
