@@ -1,0 +1,434 @@
+// ======================================================================
+// TEMPLATE FRONT MATTER - DigitalCoreNZ YouTube Video Script Template
+// ======================================================================
+// The style guide for this template is derived from the article
+// "Script Writing on YouTube" (StudioBinder, May 2026)
+:styleGuideSource: https://www.studiobinder.com/blog/script-writing-on-youtube/
+// Document title
+:title: CloneZilla Recovery
+// Document subtitle
+:subtitle: I separate my system from my data. Restoring my system overwrites everything - and that's the point
+// Author is Brian King and/or a DigitalCoreNZ Agent
+:author: Brian King
+// Email address for author
+:email: brian@digitalcore.co.nz
+// Revision number
+:revnumber: v0.5.2
+// Version label
+:version-label:
+//DocTypes are `article`, `book`, `manpage`, or `inline`
+:doctype: book
+// Publish day, Sunday-Saturday, is calculated
+:pubDay: (pending)
+// Publish date, 01-31, detail derived from file properties
+:pubDate: (pending)
+// Publish month, 01-12, detail derived from file properties
+:pubMonth: (pending)
+// Publish year, detail derived from file properties
+:pubYear: 2026
+// Update day, Sunday-Saturday, is calculated
+:upDay: (pending)
+// Update date, 01-31, detail derived from file properties
+:upDate: (pending)
+// Update month, 01-12, detail derived from file properties
+:upMonth: (pending)
+// Update year, detail derived from file properties
+:upYear: 2026
+// Publication string
+:pub-date: {pubDay} {pubDate}/{pubMonth}/{pubYear}
+// Update string
+:up-date: {upDay} {upDate}/{upMonth}/{upYear}
+// Time between creation and update
+:elapsedPeriod:
+// Icons font
+:icons: Courier
+// Display table of contents
+:toc:
+// Table of contents levels
+:toclevels: 6
+// Display section numbers
+//:sectnums:
+// Section numbers levels
+:sectnumlevels: 6
+// Business & technology terms
+:keywords: CloneZilla, disk imaging, disk cloning, savedisk, restoredisk, device-image, local_dev, destructive restore, system and data separation, NAS, RAID-5, external USB drive, backup, disaster recovery, free software, open source, GNU/Linux
+// The purpose of this script
+:summary: A step-by-step filming script that shows why I can afford to restore my system with a deliberately destructive process: my data never lives on my system drive, it lives on a 4-drive NAS. I image my system disk to an external USB drive with CloneZilla Live, then wipe and restore that disk from the image back to a known, tested, stable state - with a strong, immediately-delivered disclaimer that restoring OVERWRITES EVERYTHING on the drive or partition.
+// An outline of this script
+:description: Cold open hooks the viewer: a system I deliberately break, because I afford to. Title sequence. Scene 1 is the strong disclaimer, immediately after the title sequence: restoring overwrites EVERYTHING on the target drive or partition, no mercy, no undo, and the viewer must understand that before anything else. Scene 2 frames the setup: system and data are separated - my data lives on a 4-drive NAS in RAID-5 (4 x 6TB, 18TB usable) with a 5TB external USB drive backing the NAS up on a schedule - and I am an AI Generalist whose new installs regularly brick my system. Scene 3 covers preparing and booting the CloneZilla live rescue disk. Scene 4 walks through saving the whole system disk as an image on an external USB drive (device-image -> local_dev -> sdb1 -> savedisk). Scene 5 walks through wiping and restoring the disk from that image (restoredisk), re-emphasising the destructive nature of the step. Scene 6 recaps, re-delivers the disclaimer, delivers the core promise, the Call To Action, and the Signature Sign Off.
+// Attributions are `None` or URLs to the source material
+:attributions: https://clonezilla.org/clonezilla-live-doc.php
+// Status is `Pending`, `In progress`, or `Complete`
+:status: In progress
+// Stem is AsciiMath by default
+:stem: latexmath
+// Compress as applied to PDFs
+:compress:
+// Enhanced readability in PDFs
+:autofit-option:
+// License
+:license: Commercial
+// The copyright notice starts on 2020 and ends on the year of the last update
+:copyright: © Copyright 2020-2026 DigitalCoreNZ. All rights reserved.
+
+// ======================================================================
+// VIDEO PRODUCTION METADATA
+// These attributes are consumed by the AI agent that processes the
+// (pending) placeholders. They carry the aesthetic, scope, and
+// guidance that is deliberately NOT repeated in the body of the script.
+// ======================================================================
+// The default product type this template is geared toward
+:videoType: YouTube explainer video
+// The core topic, as supplied by the producer
+:coreTopic: Image and restore my system disk with CloneZilla Live, with the system-and-data separation that makes destructive recovery safe
+// The source material, as supplied by the producer
+:sourceMaterial: The CloneZilla Live documentation (https://clonezilla.org/clonezilla-live-doc.php), specifically the "Save disk image" and "Restore disk image" step-by-step docs, plus the producer's real-world setup: a system disk kept separate from a 4-drive NAS (4 x 6TB in RAID-5 = 18TB usable) with a 5TB external USB drive backing the NAS up on a schedule
+// The single most important sentence of the video: the core promise.
+// It should be crystal clear, compelling, outcome-focused, and bolded
+// wherever it is delivered.
+:corePromise: I separate my system from my data. So when a new install bricks my system, my recovery is destructive: I wipe the drive, restore my disk image with CloneZilla, and I am back at a tested, known, stable state
+// The default framework. Storytelling is best suited to explainer videos.
+:framework: Storytelling
+// The storytelling arc mapped onto an explainer video
+:frameworkArc: Hook (cold open) -> Conflict (the setup and the problem) -> Resolution (the value delivery across the scenes) -> Lesson (the payoff in the review)
+// Baseline video runtime. Longer runtimes are expected for more complex topics.
+:targetRuntime: 12 minutes (baseline extended for a two-part walkthrough: image plus restore)
+// Word count is not a constraint. It guides the creation process, it does not limit it.
+:wordCountPolicy: A script is as long as it needs to be; no word-count ceiling applies
+// Speaking pace, 130-160 words per minute, is a reference for estimating
+// screen time in the Duration columns, not a cap on any placeholder.
+:pacing: 130-160 words per minute (a reference value for the Duration estimates, not a limitation)
+// The number of scenes is structure, not a boundary
+:sceneGuidance: One Scene section per beat of the {frameworkArc}; repeat the Scene section as many times as the topic needs
+// Voice-over style, applied to every placeholder in the body.
+// Explainer videos can be dry, technical, and boring - this template
+// refuses any of that.
+:voiceOverStyle: Energetic, punchy, enthusiastic, minimal filler
+// Writing guidance for the AI agent (from the style guide article and house style)
+:writingGuidance: Write the way you speak; short sentences, natural rhythm; every sentence earns its place; use open loops, curiosity gaps, and pattern interrupts; keep transitions quick; read the script aloud and time it; avoid rambling, repetition, over-explaining, and long intros
+// Order of the script, immutable
+:structure: Cold open -> Title sequence -> Scenes -> Review
+// ======================================================================
+// SCOPE OF THE COLD OPEN AND REVIEW
+// ======================================================================
+// The cold open is a teaser of the up-coming content. Its purpose is to
+// engage the viewer, nail their attention, and hook them - all with the
+// hook delivered in approximately 15 seconds - and to deliver the
+// Signature Sign On, all before the title sequence rolls.
+:coldOpenScope: A teaser of the up-coming content that hooks the viewer within 15 seconds, nails their attention, seeds the core promise {corePromise}, and ends with the immutable Signature Sign On {signOn}; it is the pre-cursor to the title sequence
+// Hook techniques, from the style guide
+:coldOpenTechniques: A specific promise, a curiosity gap, immediate value, or a bold claim
+// The review is a quick recap of the video that pays off the core
+// promise, followed by the Call To Action and the Signature Sign Off.
+:reviewScope: A quick, punchy recap of the video that pays off the core promise {corePromise}, followed by the immutable CTA {cta} and the immutable Signature Sign Off {signOff}
+// ======================================================================
+// IMMUTABLES - deliver verbatim, word for word, never paraphrased
+// ======================================================================
+:signOn: My name is Brian, I'm an AI Generalist, and this is DigitalCoreNZ
+:cta: Click the Like button, and Subscribe for more content, if this is the kind of video you enjoy.
+:signOff: Until next time: Be safe, be kind, be awesome, kia kaha!!
+
+// ======================================================================
+// SCENE ANATOMY - AV Columns
+// ======================================================================
+// The heading for each scene consists of the Scene Number and Scene Title
+:sceneHeading: Scene Number (used in production): Scene Title (used on-screen)
+// Every Scene is presented as an AV table with four columns:
+// Shot, Visuals, Dialogue, Duration.
+:sceneColumns: Shot (Scene-Shot numbers, e.g. 1.1) | Visuals (what is seen, e.g. host, table, chart, etc.) | Dialogue (what the host says, or what is said as a v/o) | Duration (an estimate of the screen time)
+
+= CloneZilla Recovery v0.5.2
+> I separate my system from my data. Restoring my system overwrites everything - and that's the point
+
+== Cold Open: The Hook
+
+// See {coldOpenScope} and {coldOpenTechniques} in the front matter
+// for the scope of this section. The Hook is delivered within
+// 15 seconds and is an integral part of the overall teaser, which
+// runs for as long as it takes to engage the viewer and nail their
+// attention.
+
+== Scene 0, Scene Title: Cold Open (not seen on-screen)
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 0.1
+| Host to camera, relaxed.
+| Tēnā koe e hoa (Hello friend). Haere mai (Welcome). When I install a new AI model, a new AI agent, or a new AI tool - the installation can sometimes brick my operating system. Most people panic. Not me. I hope for the best and plan for the worst, which means: **I have separated my system from my data so that when a new install breaks things, I can easily restore my system. However, my recovery process is destructive. When I use CloneZilla and a disk image to restore my system, the target drive gets wiped. This is fine because I ALWAYS save the files that I create onto my NAS. Therefore, restoring my system means that I am back to a tested, known, stable state within minutes.** The separation of my system and my data is the whole trick, and today I will build a system image, and then restore my system using that image. My name is Brian, I'm an AI Generalist, and this is DigitalCoreNZ.
+| 0:30
+|===
+
+== Title Sequence
+
+Title card, animation, and music cue
+
+**Duration:** 5-seconds
+
+== Scene 1, Scene Title: The Warning
+
+// STRONG DISCLAIMER - delivered immediately after the title sequence, as
+// required. The viewer MUST UNDERSTAND that restoring a system
+// OVERWRITES EVERYTHING on the drive or partition. No exceptions, no
+// softening.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 1.1
+| Host to camera, close framing, no music, held silence before the line.
+| Before I touch a single drive, this is the one sentence in the whole video I need you to remember. Say it with me.
+| 0:08
+
+| 1.2
+| Kinetic type on a red background, large and held: "RESTORING OVERWRITES EVERYTHING". Music drops out.
+| Restoring a system from an image is a destructive process without mercy. Everything on the target drive or partition is overwritten. No warning at the door. No recycle bin. No undo.
+| 0:14
+
+| 1.3
+| Host to camera, steady, direct.
+| Point a restore at the wrong disk and that disk is gone in minutes - every file, every partition, every byte. That is not a worst case, that is what the tool is designed to do.
+| 0:14
+
+| 1.4
+| Host to camera, then B-roll of the NAS lighting up on the shelf.
+| So why am I not afraid of my own recovery process? Because in my setup, nothing important ever lives on that drive. My data lives somewhere else entirely. I will show you exactly where in a moment. But understand this: you can only be as destructive as I am if your data is somewhere safe.
+| 0:18
+
+| 1.5
+| Host to camera, one slow beat of silence, then a smile.
+| Restoring a disk is a wrecking ball, not a screwdriver. Now let me show you why I get to swing it.
+| 0:10
+|===
+
+== Scene 2, Scene Title: System vs Data
+
+// The conflict/setup beat: the system-and-data separation that makes
+// destructive recovery possible.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 2.1
+| Host at the desk, one hand on the PC, one hand toward the NAS on the shelf.
+| I live my life in two halves, and they never touch. My system - the drive inside this machine - runs my operating system, my models, my agents, my tools. It is the factory.
+| 0:14
+
+| 2.2
+| B-roll: the host typing documents, code, and notes; cut to files landing on the NAS shelf.
+| My data - the source code, the technical documents, the business documents - is what the system produces. And none of it stays here. It goes straight to my NAS, where it lives.
+| 0:14
+
+| 2.3
+| B-roll: front of the NAS, four drive bays, activity LEDs. Kinetic type: "4 x 6TB -> RAID-5 -> 18TB".
+| The NAS runs four drives, each 6TB, in a RAID-5 array. RAID-5 spreads your data across the drives and uses one drive's worth of space to hold parity, so I get 18 terabytes of usable, redundant storage. And if one drive fails, the array keeps working.
+| 0:18
+
+| 2.4
+| B-roll: the 5TB external USB drive plugged into the back of the NAS. Kinetic type: "NAS -> 5TB external, on a schedule".
+| And the NAS is not the end of the line. I have a 5TB external USB drive attached to it, and the NAS backs itself up onto that drive on a schedule. So my data gets redundant storage, and then a second copy on top.
+| 0:16
+
+| 2.5
+| Host to camera, leaning in.
+| Here is why that is worth a video. I am an AI Generalist. Installing new models, agents, and tools is not an event for me, it is a hobby. And sometimes a new install bricks my system.
+| 0:12
+
+| 2.6
+| Host to camera.
+| So I do not rescue a broken system, I replace it. I restore my system disk from an image I made when it was healthy - destructive, complete, and back at a tested, known, stable state. That image is the only moving part in this whole setup.
+| 0:16
+|===
+
+== Scene 3, Scene Title: Boot the Rescue Disk
+
+// Resolution beat one: prepare the tools.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 3.1
+| Host at the desk with a USB flash drive and an external USB drive in hand.
+| Here is my setup. sda is the system drive I want to protect - my operating system, my tools, my models. And plugged in next to it is an external USB drive - sdb - that will hold my image. Two disks, one job each.
+| 0:14
+
+| 3.2
+| B-roll: hand plugging the USB stick into the front of the PC; monitor powering on.
+| I write the CloneZilla live image to a USB flash drive, and I plug that stick into the machine. Then I set the machine to boot from USB, and I power it on.
+| 0:12
+
+| 3.3
+| Screen capture: the CloneZilla live boot menu.
+| This is the boot menu. I choose the standard 800 by 600 mode, and I press Enter. I can watch Debian Linux booting underneath. This is my rescue environment, and it is all running from the USB stick.
+| 0:14
+
+| 3.4
+| Screen capture: the language selection screen.
+| First, it asks for my language. I pick mine.
+| 0:06
+
+| 3.5
+| Screen capture: the keyboard layout screen.
+| Next, my keyboard layout. I select the one that matches my country, so I type the way I expect to type.
+| 0:08
+
+| 3.6
+| Screen capture: the CloneZilla main menu.
+| Now I choose "Start Clonezilla". And CloneZilla opens in front of me. Everything I am about to do lives inside this one menu.
+| 0:10
+|===
+
+== Scene 4, Scene Title: Save a Disk Image
+
+// Resolution beat two: the savedisk walkthrough.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 4.1
+| Screen capture: the CloneZilla task menu. Host v/o.
+| Time to make my system image. In the task menu, I choose "device-image". That means I am working between a device - a disk - and an image.
+| 0:10
+
+| 4.2
+| Screen capture: the image type menu.
+| Next, I choose "local_dev". That tells CloneZilla my image home is a local device - in my case, the external USB drive I have plugged into the machine.
+| 0:10
+
+| 4.3
+| Screen capture: the image repository selection, sdb1 highlighted.
+| Here I select sdb1 - a partition on my USB drive - as the image repository. This is where the image file physically lands. Get this right, because this is the only place my system backup will exist.
+| 0:13
+
+| 4.4
+| Screen capture: the task options.
+| Now for the important one. I choose "savedisk". That is the instruction: save this whole disk as an image.
+| 0:08
+
+| 4.5
+| Screen capture: the image name and source disk prompt.
+| CloneZilla asks me for an image name. I give it something I will remember in the dark, something like "brian-system-2026". Then it asks which disk to save, and I select sda - my system drive, the disk I am protecting. Note what is NOT on it: my data. That is on the NAS.
+| 0:18
+
+| 4.6
+| Screen capture: the progress log scrolling.
+| That is it. CloneZilla is now saving my system image - sda - onto sdb1. I watch the log, and I let it run. Depending on the size of my disk and how fast my hardware is, this takes its time, so I step back.
+| 0:12
+|===
+
+== Scene 5, Scene Title: Destroy and Rebuild
+
+// Resolution beat three: the restoredisk walkthrough. The destructive
+// nature of this step is re-emphasised, as established in Scene 1.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 5.1
+| Host at the desk. B-roll: plugging in the USB stick and the external image drive.
+| Now for the pay-off - and this is where the warning from the top of the video comes home. I have my machine, and I have my USB drive holding my image. I boot the machine from the same CloneZilla live USB stick.
+| 0:14
+
+| 5.2
+| Screen capture: boot menu, language, keyboard layout, in quick succession.
+| I press Enter at the 800 by 600 menu. I confirm my language. I confirm my keyboard layout. Same rescue environment as before.
+| 0:10
+
+| 5.3
+| Screen capture: "Start CloneZilla" selected.
+| I choose "Start Clonezilla", and I am in the main menu.
+| 0:06
+
+| 5.4
+| Screen capture: "device-image" selected.
+| Again, I choose "device-image". I am moving between a disk and an image, just like before.
+| 0:08
+
+| 5.5
+| Screen capture: "local_dev" selected, then sdb1.
+| I choose "local_dev", and I select sdb1 as the image repository - the very same partition where I saved my image. This is the side of the room my backup is living in.
+| 0:13
+
+| 5.6
+| Screen capture: "restoredisk" highlighted.
+| And now I choose "restoredisk". Read that one twice in your head: restore, disk. CloneZilla is about to erase a disk and rebuild it from my image. Everything on the target goes. That is the design.
+| 0:14
+
+| 5.7
+| Screen capture: the image name list and destination disk selection.
+| I select my image by name - "brian-system-2026". And I select the destination disk. In a real incident this is the bricked drive, or a fresh replacement - and whatever is on it is gone the moment I confirm. So I check the name, I check the size, I pause, and I confirm. One wrong letter, gone forever.
+| 0:22
+
+| 5.8
+| Screen capture: the progress log, then a clean boot of the restored system.
+| CloneZilla overwrites the system drive from my image. It runs, it finishes, and I boot the machine from that restored disk. My desktop comes up. My agents are there, my tools are there, my models are there. My system is back, tested and known and stable. And my data did not take one second off, because it never lived on that drive at all.
+| 0:20
+|===
+
+== Scene 6, Scene Title: In Review
+
+// See {reviewScope} in the front matter for the scope of this
+// section: a quick recap of the video, the CTA, and the Signature
+// Sign Off, in that order.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 6.1
+| Host to camera, kinetic type recapping the key menu path:
+"device-image -> local_dev -> savedisk / restoredisk", with the line
+"RESTORING OVERWRITES EVERYTHING" flashing once.
+| Quick recap. My system makes my data, and my data lives on the NAS - four drives, six terabytes each, in RAID-5, 18 terabytes usable, with a 5 terabyte external drive backing that up on a schedule. And this is the loop: **I separate my system from my data. So when a new install bricks my system, my recovery is destructive: I wipe the drive, restore my disk image with CloneZilla, and I am back at a tested, known, stable state.** Boot CloneZilla from a USB stick. device-image, then local_dev, then sdb1 on my external USB drive. I want a backup, I choose savedisk, I name my image, and I pick sda. The day has gone wrong, I choose restoredisk - it overwrites everything on the target, no undo - and I pick my destination disk carefully, and my system comes back to life.
+| 0:34
+
+| 6.2
+| Host to camera.
+| Click the Like button, and Subscribe for more content, if this is the kind of video you enjoy.
+| 0:06
+
+| 6.3
+| Host to camera, warm and direct.
+| Until next time: Be safe, be kind, be awesome, kia kaha!!
+| 0:05
+|===
+
+== Document Details for CloneZilla Recovery
+
+**Document Subtitle:** {subtitle}
+
+**Document Version:** {revnumber}
+
+**Document Author(s):** {author}
+
+**Video Type:** {videoType}
+
+**Framework:** {framework} ({frameworkArc})
+
+**Target Runtime:** {targetRuntime}
+
+**Voice-over Style:** {voiceOverStyle}
+
+**Keywords:** {keywords}
+
+**Summary:** {summary}
+
+**SEO Title:** CloneZilla Recovery: Wipe My System Disk and Restore It (55 characters)
+
+**SEO Description:** I keep my system separate from my data. When the system bricks, recovery is destructive: wipe the drive, restore a disk image, and I am back. Step by step. (155 characters)
+
+**License:** {license}
+
+**Document Attributions:** {attributions}
+
+**Publication Date:** {pub-date}
+
+**Last Update:** {up-date}
+
+{copyright} +
+ +
+ +
+ +
+ +
+ +
+ +
+ +

@@ -1,0 +1,251 @@
+// ======================================================================
+// TEMPLATE FRONT MATTER - DigitalCoreNZ YouTube Video Script Template
+// ======================================================================
+// The style guide for this template is derived from the article
+// "Script Writing on YouTube" (StudioBinder, May 2026)
+:styleGuideSource: https://www.studiobinder.com/blog/script-writing-on-youtube/
+// Document title
+:title: (pending)
+// Document subtitle
+:subtitle: (pending)
+// Author is Brian King and/or a DigitalCoreNZ Agent
+:author: Brian King
+// Email address for author
+:email: brian@digitalcore.co.nz
+// Revision number
+:revnumber: v0.5.1
+// Version label
+:version-label:
+//DocTypes are `article`, `book`, `manpage`, or `inline`
+:doctype: book
+// Publish day, Sunday-Saturday, is calculated
+:pubDay: (pending)
+// Publish date, 01-31, detail derived from file properties
+:pubDate: (pending)
+// Publish month, 01-12, detail derived from file properties
+:pubMonth: (pending)
+// Publish year, detail derived from file properties
+:pubYear: 2026
+// Update day, Sunday-Saturday, is calculated
+:upDay: (pending)
+// Update date, 01-31, detail derived from file properties
+:upDate: (pending)
+// Update month, 01-12, detail derived from file properties
+:upMonth: (pending)
+// Update year, detail derived from file properties
+:upYear: 2026
+// Publication string
+:pub-date: {pubDay} {pubDate}/{pubMonth}/{pubYear}
+// Update string
+:up-date: {upDay} {upDate}/{upMonth}/{upYear}
+// Time between creation and update
+:elapsedPeriod:
+// Icons font
+:icons: Courier
+// Display table of contents
+:toc:
+// Table of contents levels
+:toclevels: 6
+// Display section numbers
+//:sectnums:
+// Section numbers levels
+:sectnumlevels: 6
+// Business & technology terms
+:keywords: (pending a search for the idiomatic terms within the source material)
+// The purpose of this script
+:summary: (pending an analysis of the purpose of this video)
+// An outline of this script
+:description: (pending the development of an outline for this video)
+// Attributions are `None` or URLs to the source material
+:attributions: (pending a search for external references that are used within this video)
+// Status is `Pending`, `In progress`, or `Complete`
+:status: (pending)
+// Stem is AsciiMath by default
+:stem: latexmath
+// Compress as applied to PDFs
+:compress:
+// Enhanced readability in PDFs
+:autofit-option:
+// License
+:license: Commercial
+// The copyright notice starts on 2020 and ends on the year of the last update
+:copyright: © Copyright 2020-{upYear} DigitalCoreNZ. All rights reserved.
+
+// ======================================================================
+// VIDEO PRODUCTION METADATA
+// These attributes are consumed by the AI agent that processes the
+// (pending) placeholders. They carry the aesthetic, scope, and
+// guidance that is deliberately NOT repeated in the body of the script.
+// ======================================================================
+// The default product type this template is geared toward
+:videoType: YouTube explainer video
+// The core topic, as supplied by the producer
+:coreTopic: (pending, supplied by the producer, e.g. widgets)
+// The source material, as supplied by the producer
+:sourceMaterial: (pending, supplied by the producer)
+// The single most important sentence of the video: the core promise.
+// It should be crystal clear, compelling, outcome-focused, and bolded
+// wherever it is delivered.
+:corePromise: (pending)
+// The default framework. Storytelling is best suited to explainer videos.
+:framework: Storytelling
+// The storytelling arc mapped onto an explainer video
+:frameworkArc: Hook (cold open) -> Conflict (the setup and the problem) -> Resolution (the value delivery across the scenes) -> Lesson (the payoff in the review)
+// Baseline video runtime. Longer runtimes are expected for more complex topics.
+:targetRuntime: 10 minutes (baseline; extend as the complexity of the topic demands)
+// Word count is not a constraint. It guides the creation process, it does not limit it.
+:wordCountPolicy: A script is as long as it needs to be; no word-count ceiling applies
+// Speaking pace, 130-160 words per minute, is a reference for estimating
+// screen time in the Duration columns, not a cap on any placeholder.
+:pacing: 130-160 words per minute (a reference value for the Duration estimates, not a limitation)
+// The number of scenes is structure, not a boundary
+:sceneGuidance: One Scene section per beat of the {frameworkArc}; repeat the Scene section as many times as the topic needs
+// Voice-over style, applied to every placeholder in the body.
+// Explainer videos can be dry, technical, and boring - this template
+// refuses any of that.
+:voiceOverStyle: Energetic, punchy, enthusiastic, minimal filler
+// Writing guidance for the AI agent (from the style guide article and house style)
+:writingGuidance: Write the way you speak; short sentences, natural rhythm; every sentence earns its place; use open loops, curiosity gaps, and pattern interrupts; keep transitions quick; read the script aloud and time it; avoid rambling, repetition, over-explaining, and long intros
+// Order of the script, immutable
+:structure: Cold open -> Title sequence -> Scenes -> Review
+// ======================================================================
+// SCOPE OF THE COLD OPEN AND REVIEW
+// ======================================================================
+// The cold open is a teaser of the up-coming content. Its purpose is to
+// engage the viewer, nail their attention, and hook them - all with the
+// hook delivered in approximately 15 seconds - and to deliver the
+// Signature Sign On, all before the title sequence rolls.
+:coldOpenScope: A teaser of the up-coming content that hooks the viewer within 15 seconds, nails their attention, seeds the core promise {corePromise}, and ends with the immutable Signature Sign On {signOn}; it is the pre-cursor to the title sequence
+// Hook techniques, from the style guide
+:coldOpenTechniques: A specific promise, a curiosity gap, immediate value, or a bold claim
+// The review is a quick recap of the video that pays off the core
+// promise, followed by the Call To Action and the Signature Sign Off.
+:reviewScope: A quick, punchy recap of the video that pays off the core promise {corePromise}, followed by the immutable CTA {cta} and the immutable Signature Sign Off {signOff}
+// ======================================================================
+// IMMUTABLES - deliver verbatim, word for word, never paraphrased
+// ======================================================================
+:openGreeting: Tēnā koe e hoa (Hello friend). Haere mai (Welcome). 
+:signOn: My name is Brian, I'm an AI Generalist, and this is DigitalCoreNZ
+:cta: Click the Like button, and Subscribe for more content, if this is the kind of video you enjoy.
+:signOff: Until next time: Be safe, be kind, be awesome, kia kaha!!
+
+// ======================================================================
+// SCENE ANATOMY - AV Columns
+// ======================================================================
+// The heading for each scene consists of the Scene Number and Scene Title 
+:sceneHeading: Scene Number (used in production): Scene Title (used on-screen)
+// Every Scene is presented as an AV table with four columns:
+// Shot, Visuals, Dialogue, Duration.
+:sceneColumns: Shot (Scene-Shot numbers, e.g. 1.1) | Visuals (what is seen, e.g. host, table, chart, etc.) | Dialogue (what the host says, or what is said as a v/o) | Duration (an estimate of the screen time)
+
+= {title} {revnumber}
+> {subtitle}
+
+== Cold Open: The Hook
+
+// See {coldOpenScope} and {coldOpenTechniques} in the front matter
+// for the scope of this section. The Hook is delivered within
+// 15 seconds and is an integral part of the overall teaser, which
+// runs for as long as it takes to engage the viewer and nail their
+// attention.
+
+== Scene 0, Scene Title: Cold Open (not seen on-screen)
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| 0.1
+| Host to camera, kinetic type, B-roll
+| {openGreeting}. (pending: the hook - a specific promise, a curiosity gap, immediate value, or a bold claim, seeded from {corePromise}). {signOn}
+| (pending, an estimate of the screen time)
+|===
+
+== Title Sequence
+
+Title card, animation, and music cue
+
+**Duration:** 5-seconds
+
+== Scene (pending production #), Scene Title: (pending, as seen on-screen)
+
+// The number of scenes is structure, not a boundary (see
+// {sceneGuidance} in the front matter). Each Scene is a beat
+// of the {frameworkArc}; repeat this scene structure as needed.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| (pending, e.g. 1.1)
+| (pending, e.g. host, table, chart)
+| (pending, host or v/o)
+| (pending)
+|===
+
+== Scene (pending production #), Scene Title: In Review
+
+// See {reviewScope} in the front matter for the scope of this
+// section: a quick recap of the video, the CTA, and the Signature
+// Sign Off, in that order.
+
+|===
+| Shot | Visuals | Dialogue | Duration
+
+| (pending)
+| (pending)
+| (pending: a quick recap of the video that pays off {corePromise})
+| (pending, an estimate of the screen time)
+
+| (pending)
+| (pending)
+| {cta}
+| (pending, an estimate of the screen time)
+
+| (pending)
+| (pending)
+| {signOff}
+| (pending, an estimate of the screen time)
+|===
+
+== Document Details for {title}
+
+**Document Subtitle:** {subtitle}
+
+**Document Version:** {revnumber}
+
+**Document Author(s):** {author}
+
+**Video Type:** {videoType}
+
+**Framework:** {framework} ({frameworkArc})
+
+**Target Runtime:** {targetRuntime}
+
+**Voice-over Style:** {voiceOverStyle}
+
+**Keywords:** {keywords}
+
+**Summary:** {summary}
+
+**SEO Title:** (pending, maximum 60 characters)
+
+**SEO Description:** (pending, maximum 150 characters)
+
+**License:** {license}
+
+**Document Attributions:** {attributions}
+
+**Publication Date:** {pub-date}
+
+**Last Update:** {up-date}
+
+{copyright} +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
