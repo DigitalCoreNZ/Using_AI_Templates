@@ -1,11 +1,11 @@
 # Using AI Templates
 
-This repository contains an example of my workflow for producing YouTube video scripts with AI. It shows you what I build and how I build it, in three stages:
+This repository contains an example of my workflow for producing YouTube video scripts with AI. It shows you what I built and how I built it, in four stages:
 
-1. My **template prompt**, which specifies how I want the template to be built.
-2. My **videos template** — the structured style guide that accompanies my script prompt. It carries the (pending) placeholders, my custom production metadata, and my immutables, and an AI agent processes all of it.
-3. My **script prompt**, which identifies the script content, and is used in conjunction with the **template prompt**.
-4. My **shooting scripts** — the end product, which my AI agent generates using the videos template as the style guide and the script prompt providing the content and direction.
+1. My **template prompt**, which specifies how I want the videos template to be built.
+2. My **videos template** — the structured style guide that accompanies my script prompt. It carries the (pending) placeholders, my custom production metadata, my immutables, This template provides an AI agent with a structural layout for writing scripts.
+3. My **script prompt** identifies the content of a script, and is used in conjunction with the **template prompt**.
+4. My **shooting scripts** — the end product, which my AI agent generates using the videos template as the style guide and the script prompt that provides content, context, and direction.
 
 I write my prompts in Markdown (`.md`), my templates and scripts in AsciiDoc (`.ad`), and my script-writing structure on the [StudioBinder "Script Writing on YouTube"](https://www.studiobinder.com/blog/script-writing-on-youtube/)
 article.
