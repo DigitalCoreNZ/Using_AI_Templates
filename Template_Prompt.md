@@ -1,4 +1,4 @@
-# Videos Template
+# Template Prompt
 
 You will use the `https://www.studiobinder.com/blog/script-writing-on-youtube/` article as your source when you create the 
 `/media/brian/Apps/01_lena_v0.5.0/Templates/Template_Videos_v0.5.1.ad` template. A template is the structured, style guide that accompanies an AI prompt, and provides the (pending) placeholders that are processed by an AI agent.
